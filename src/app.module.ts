@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PublishObjectModule } from './modules/publish-object/publish_object.module';
+import { PublishModule } from './modules/publish/publish.module';
 
 @Module({
-  imports: [PublishObjectModule],
+  imports: [PublishModule],
   controllers: [AppController],
   providers: [AppService],
 })
