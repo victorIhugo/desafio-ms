@@ -21,7 +21,7 @@
     "docker-compose": "docker-compose up -d",
     "docker-build": "docker build -t test .",
     "docker-run": "docker run -d --name test --env-file=.env -p 80:3000 test",
-    "docker-mongodb": "docker run --name mongodb -d --add-host mongodb:0.0.0.0 -p 27017:27017 mongodb/mongodb-community-server:latest"
+    "docker-mongodb": "docker run --name mongodb -d -p 27017:27017 mongodb/mongodb-community-server:latest"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
