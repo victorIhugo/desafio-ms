@@ -28,10 +28,10 @@ KAFKABROKER=host.docker.internal:29092
 MONGODBCONNECT=mongodb://mongodb:27017
 ```
 
-## Suporte
+## Endpoints
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Esta API tem 3 endpoints
 
-## Licença
-
-Nest is [MIT licensed](LICENSE).
+* GET - http://localhost:3000/consume <- Lista a quantidade de registros em um tópico através do parâmetro topic na query.
+* POST - http://localhost:3000/publish <- Publica um registro no tópico do Kafka, recebe dados através do parâmetro objectJSON no body.
+* DELETE - http://localhost:3000/consume <- Deleta os registros do tópico do Kafka.
