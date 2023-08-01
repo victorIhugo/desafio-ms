@@ -1,19 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { Kafka, Partitioners } from 'kafkajs';
+import { Partitioners } from 'kafkajs';
+import { kafka } from 'src/common/helpers/kafka.helper';
 
 @Injectable()
 export class PublishService {
-  private kafka(): Kafka {
-    const kafka = new Kafka({
-      clientId: 'my-app',
-      brokers: [process.env.KAFKABROKER],
-    });
-
-    return kafka;
-  }
+  private readonly kafka = kafka();
 
   async publish(value: string): Promise<string> {
-    const kafkaProducer = this.kafka().producer({ createPartitioner: Partitioners.DefaultPartitioner });
+    const kafkaProducer = this.kafka.producer({ createPartitioner: Partitioners.DefaultPartitioner });
 
     await kafkaProducer.connect();
 
