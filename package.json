@@ -17,7 +17,11 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "docker-compose": "docker-compose up -d",
+    "docker-build": "docker build -t test .",
+    "docker-run": "docker run -d --name test --env-file=.env -p 80:3000 test",
+    "docker-mongodb": "docker run --name mongodb -d --add-host mongodb:0.0.0.0 -p 27017:27017 mongodb/mongodb-community-server:latest"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -33,11 +37,8 @@
     "@nestjs/cli": "^10.0.0",
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.17",
     "@types/jest": "^29.5.2",
-    "@types/kafkajs": "^1.9.0",
-    "@types/mongodb": "^4.0.7",
     "@types/node": "^20.3.1",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
