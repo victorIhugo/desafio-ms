@@ -4,10 +4,10 @@ API para publicar registros na plataforma de mensageria Kafka e em seguida grava
 
 ## Pré-Requisitos
 
-Node.JS
-Yarn
-Nest.JS
-Docker
+* Node.JS
+* Yarn
+* Nest.JS
+* Docker
 
 ## Instalação
 
