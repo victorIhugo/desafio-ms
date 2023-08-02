@@ -1,6 +1,6 @@
 ## Descrição
 
-API para publicar registros na plataforma de mensageria Kafka e em seguida gravar no banco de dados NoSQL MongoDB
+API para publicar registros na plataforma de mensageria Kafka e em seguida gravar no banco de dados NoSQL MongoDB.
 
 ## Pré-Requisitos
 
@@ -35,7 +35,7 @@ MONGODBCONNECT=mongodb://host.docker.internal:27017
 
 ## Endpoints
 
-Esta API tem 3 endpoints
+Esta API consta com 4 endpoints.
 
 * GET - http://localhost:3000/publish <- Lista registros gravados no MongoDB.
 * POST - http://localhost:3000/publish <- Publica um registro no tópico do Kafka, recebe dados através do parâmetro objectJSON no body.
