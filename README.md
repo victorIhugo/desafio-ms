@@ -19,7 +19,6 @@ $ yarn build
 ## Rodando a aplicação (Docker necessário)
 
 ```bash
-# desenvolvimento
 $ docker-compose -- Subir o Zookeper, Kafka e MongoDB
 $ docker-build -- Buildar a API
 $ docker-run -- Rodar a API
