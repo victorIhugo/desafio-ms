@@ -1,4 +1,4 @@
-import { Controller, Post, Req, Res } from '@nestjs/common';
+import { Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { BadRequestException } from '@nestjs/common/exceptions';
 import { Request, Response } from 'express';
 import { PublishService } from './publish.service';
@@ -6,6 +6,13 @@ import { PublishService } from './publish.service';
 @Controller('publish')
 export class PublishController {
   constructor(private readonly publishService: PublishService) {}
+
+  @Get()
+  async find(@Req() req: Request, @Res() res: Response): Promise<Response> {
+    const find = await this.publishService.find();
+
+    return res.json(find);
+  }
 
   @Post()
   async publish(@Req() req: Request, @Res() res: Response): Promise<Response> {
